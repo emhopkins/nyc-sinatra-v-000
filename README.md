@@ -5,7 +5,7 @@
 We're going to build a history site for New York City, so we're going to need to create the following database structure:
 
 * You will have three models (and their corresponding tables) `Landmark`, `Title`, `Figure` (think historical figure). 
-* A landmark `belongs_to` a figure and a figure `has_many` landmarks. 
+* A landmark `belongs_to` a figure and a figure `has_many` titles. 
 * Titles and figures have a "many-to-many" relationship, so we'll need a join table. 
 
 ### Domain Model
@@ -73,7 +73,7 @@ Below is an example of a join table. We called it figure_titles and you should d
 
 Now, use the `has_many`, `belongs_to` and `has_many, :through` macros to set up the correct associations in your models:
 
-* A Landmark `belongs_to` a figure and a figure `has_many` landmarks.
+* A Landmark `belongs_to` a figure and a figure `has_many` titles.
 * A title `has_many` figure_titles and many figures through figure_titles. 
 * A figure `has_many` figure_titles and many titles through figure_titles.
 * A figure_title `belongs_to` a figure and a title. 
